@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polski asystent głosowy</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <p class="eyebrow">Azure Speech + GPT-4.1-mini</p>
+        <h1>Polski asystent głosowy</h1>
+        <p>Powiedz coś po polsku. Asystent zrozumie, odpowie i przeczyta odpowiedź głosem Andrew.</p>
+      </header>
+
+      <section id="conversation" class="conversation" aria-live="polite">
+        <p class="empty-state">Rozmowa pojawi się tutaj.</p>
+      </section>
+
+      <section class="controls">
+        <button id="record-button" class="record-button" type="button">
+          <span class="record-dot" aria-hidden="true"></span>
+          <span id="record-label">Zacznij mówić</span>
+        </button>
+        <p id="status" role="status">Gotowy</p>
+        <audio id="answer-audio" controls hidden></audio>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

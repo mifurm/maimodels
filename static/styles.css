@@ -1,0 +1,180 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #07111f;
+  color: #edf5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(32, 120, 255, 0.28), transparent 35rem),
+    linear-gradient(145deg, #07111f, #0d1b2e 60%, #11243c);
+}
+
+.app {
+  width: min(760px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #6ee7ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: clamp(2.25rem, 8vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+header > p:last-child {
+  max-width: 620px;
+  color: #aec2da;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.conversation {
+  min-height: 300px;
+  max-height: 52vh;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(5, 13, 25, 0.7);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+}
+
+.empty-state {
+  display: grid;
+  min-height: 265px;
+  margin: 0;
+  place-items: center;
+  color: #6f849e;
+}
+
+.message {
+  width: min(85%, 560px);
+  margin: 0.75rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+}
+
+.message strong {
+  color: #8eeaff;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.message p {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+
+.message.user {
+  margin-left: auto;
+  background: #1769e0;
+}
+
+.message.user strong {
+  color: #d8eaff;
+}
+
+.message.assistant {
+  background: #182b42;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+}
+
+.record-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3.5rem;
+  padding: 0.8rem 1.35rem;
+  border: 0;
+  border-radius: 999px;
+  background: #f5f9ff;
+  color: #081423;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.record-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.record-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.record-button.recording {
+  background: #ff647c;
+}
+
+.record-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: #e52342;
+}
+
+.recording .record-dot {
+  border-radius: 0.15rem;
+  background: #56101c;
+}
+
+#status {
+  min-height: 1.5rem;
+  margin: 0;
+  color: #93a9c3;
+  text-align: center;
+}
+
+#status.error {
+  color: #ff91a2;
+}
+
+#answer-audio {
+  width: min(100%, 420px);
+}
+
+@media (max-width: 560px) {
+  .app {
+    padding-top: 2rem;
+  }
+
+  .conversation {
+    max-height: 48vh;
+  }
+
+  .message {
+    width: 92%;
+  }
+}

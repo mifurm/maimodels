@@ -1,0 +1,7 @@
+# azure: ambiguous - could be azure-datalake-store, azure-storage-file-share, azure-cli, azure-devops, azure-cosmosdb-nspkg, azure-cosmosdb-table, azure-kusto-data, azure-storage-file-datalake
+python-dotenv
+azure-cognitiveservices-speech
+fastapi
+openai
+python-multipart
+uvicorn[standard]
